@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block app_content %}
+    {{ super() }}
+    <a class="home-btn" href="/">На главную!</a>
+    <div class="description">{{ mansion_.current_room_alert }}
+        <form method="post" action="{{ url_for('game') }}">
+            {{ form.csrf_token }}
+            <p class="description">{{ form.way.label }}</p>
+                <select class="select-style" name="{{ form.way.name }}">
+                    {% for value in form.way.choices %}
+                        <option value="{{ value }}">{{ value }}</option>
+                    {% endfor %}
+                </select>
+            <input type="submit" class="btn btn-primary" value="Сделать шаг">
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block app_content %}
+    {{ super() }}
+    <a class="home-btn" href="/">На главную!</a>
+    <a class="btn btn-primary" href="{{ url_for('start_game') }}">Начать игру</a>
+{#    <form action="" method="post">#}
+{#        <p>#}
+{#            <label for="message">Message:</label>#}
+{#            <input type="text" name="message">#}
+{#        </p>#}
+{#        <p>#}
+{#            <input type="submit">#}
+{#        </p>#}
+{#    </form>#}
+    <p>{{ message }}</p>
+{% endblock %}
